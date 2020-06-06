@@ -1,0 +1,34 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <h1>Users list</h1>
+  </div>
+</div>
+
+<div class="mt-5 mb-5">
+  <%=  %>
+</div>
+
+<table class="table p3 border rounded-sm">
+  <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Date and time</th>
+      <th scope="col">Barber</th>
+      <th scope="col">Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.id %></td>
+        <td><a href="/secure/place/<%= client.id %>"><%= client.username %></a></td>
+        <td><%= client.phone %></td>
+        <td><%= client.datestamp %></td>
+        <td><%= client.barber %></td>
+        <td><%= client.color %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
